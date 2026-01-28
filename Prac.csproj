@@ -5,7 +5,7 @@
     <TargetFramework>net10.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <StartupObject>String.Ques1</StartupObject>
+    <StartupObject>ExceptionA.UserInterface2</StartupObject>
   </PropertyGroup>
 
 </Project>
