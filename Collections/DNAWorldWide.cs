@@ -25,12 +25,12 @@ public class UserInterfaceC2
         ForensicReport forensicReport = new ForensicReport();
 
         Console.WriteLine("Enter number of reports to be added");
-        int n = int.Parse(Console.ReadLine());
+        int n = int.Parse(Console.ReadLine()!);
 
         Console.WriteLine("Enter the Forensic reports (Reporting Officer: Report Filed Date)");
         for (int i = 0; i < n; i++)
         {
-            string input = Console.ReadLine();
+            string input = Console.ReadLine()!;
             string[] parts = input.Split(":");
 
             string officer = parts[0];
@@ -40,7 +40,7 @@ public class UserInterfaceC2
         }
 
         Console.WriteLine("Enter the filed date to identify the reporting officers");
-        DateTime searchDate = DateTime.Parse(Console.ReadLine());
+        DateTime searchDate = DateTime.Parse(Console.ReadLine()!);
 
         List<string> result =
             forensicReport.getOfficersWhoFiledReportsOnDate(searchDate);
