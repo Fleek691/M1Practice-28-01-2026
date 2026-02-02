@@ -32,6 +32,6 @@ public class UserInterfaceC3
         double minRent=double.Parse(Console.ReadLine()!);
         double maxRent=double.Parse(Console.ReadLine()!);
         var totalSum=apartment.findTotalRentOfApartmentsinTheGivenRange(minRent,maxRent);
-        System.Console.WriteLine($"Total Rent in the range {minRent:F1} to {maxRent:F2} USD:{totalSum:F3}");
+        System.Console.WriteLine($"Total Rent in the range {minRent:C1} to {maxRent:F2} USD:{totalSum:F3}");
     }
 }
