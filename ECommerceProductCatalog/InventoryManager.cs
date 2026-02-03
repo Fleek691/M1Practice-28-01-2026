@@ -20,7 +20,7 @@ public class InventoryManager
             return;
         }
 
-        string productCode = $"P{nextCode:D3}";
+        string productCode = $"P{nextCode:D3}";//P101,P002
 
         productCatalog.Add(
             productCode,
