@@ -30,7 +30,7 @@ class Service
         }catch(Exception ex)
         {
             System.Console.WriteLine("Logging Exception from called method "+ex.Message);
-            Repository.GetData();
+            throw;
         }
     }
 }
