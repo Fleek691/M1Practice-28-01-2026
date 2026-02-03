@@ -11,35 +11,38 @@ class BankAccount
 
         try
         {
-            // TODO 1: Throw exception if amount <= 0
-            if(amount<=0){
-                throw new BankProblemException("Invalid Amount");
-            }
-            // TODO 2: Throw exception if amount > balance
-            else if(amount>balance){
-                throw new BankProblemException("Invalid Amount");
-            }
-            // TODO 3: Deduct amount if valid
-            else
+            if (amount <= 0)
             {
-                balance=balance-amount;
+                throw new BankProblemException("Withdrawal amount must be greater than zero.");
             }
 
+            if (amount > balance)
+            {
+                throw new BankProblemException("Insufficient balance.");
+            }
+
+            balance -= amount;
+            Console.WriteLine("Withdrawal successful.");
+            Console.WriteLine($"Remaining balance: {balance}");
         }
-        catch (Exception ex)
+        catch (BankProblemException ex)
         {
-            System.Console.WriteLine(ex.Message);
+            Console.WriteLine($"Transaction failed: {ex.Message}");
+        }
+        catch (FormatException)
+        {
+            Console.WriteLine("Invalid input. Please enter a numeric value.");
         }
         finally
         {
-            System.Console.WriteLine("Process Over");
+            Console.WriteLine("Transaction process completed.");
         }
     }
 }
+
 public class BankProblemException : Exception
 {
-    public BankProblemException(string message): base(message)
+    public BankProblemException(string message) : base(message)
     {
-        
     }
 }
